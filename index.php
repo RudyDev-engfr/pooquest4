@@ -2,8 +2,10 @@
 
 require_once "Bicycle.php";
 require_once "Car.php";
+require_once "Truck.php";
 
-$bike = new Bicycle ();
+
+$bike = new Bicycle ("Yellow", 1);
 var_dump($bike);
 
 // Moving bike
@@ -23,14 +25,14 @@ echo $bike->brake();
 
 // Instanciation d'un nouvel objet $rockrider
 
-$rockrider = new Bicycle();
+$rockrider = new Bicycle("Red", 1);
 
 $rockrider->setColor = 'yellow';
 
 
 // Instanciation d'un nouvel objet $tornado
 
-$tornado = new Bicycle();
+$tornado = new Bicycle("Black", 1);
 
 $tornado->setColor = 'black';
 
@@ -49,4 +51,11 @@ echo $viper->start() . "<br>";
 echo $viper->forward() . "<br>";
 echo $viper->brake() . "<br>";
 echo $viper->stop() . "<br>";
+
+$kaamthar = new Truck (1000, "Black with flames", 2, "fuel");
+echo $kaamthar->start() . "<br>";
+echo $kaamthar->forward() . "<br>";
+echo $kaamthar->brake() . "<br>";
+echo $kaamthar->stop() . "<br>";
+echo $kaamthar->loadingStatement();
 

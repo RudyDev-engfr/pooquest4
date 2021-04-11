@@ -3,6 +3,9 @@
 require_once "Bicycle.php";
 require_once "Car.php";
 require_once "Truck.php";
+require_once "MotorWay.php";
+require_once "PedestrianWay.php";
+require_once "ResidentialWay.php";
 
 
 $bike = new Bicycle ("Yellow", 1);
@@ -58,4 +61,15 @@ echo $kaamthar->forward() . "<br>";
 echo $kaamthar->brake() . "<br>";
 echo $kaamthar->stop() . "<br>";
 echo $kaamthar->loadingStatement();
+
+$autoroute = new MotorWay(4, 130);
+$parc = new PedestrianWay(1, 10);
+$ruedelapaix = new ResidentialWay(2, 50);
+
+var_dump($autoroute);
+var_dump($parc);
+var_dump($ruedelapaix);
+
+echo $autoroute->addVehicle($viper);
+var_dump($autoroute); // le véhicule est bien ajouté à la voie
 

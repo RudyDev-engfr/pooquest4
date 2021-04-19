@@ -8,39 +8,39 @@ require_once "PedestrianWay.php";
 require_once "ResidentialWay.php";
 
 
-$bike = new Bicycle ("Yellow", 1);
-var_dump($bike);
+// $bike = new Bicycle ("Yellow", 1);
+// var_dump($bike);
 
-// Moving bike
-
-
-var_dump($bike); // then, another dump.
-
-echo $bike->forward();
-
-echo '<br> Vitesse du vélo : ' . $bike->getCurrentSpeed() . ' km/h' . '<br>';
-
-echo $bike->brake();
-
-echo '<br> Vitesse du vélo : ' . $bike->getCurrentSpeed() . ' km/h' . '<br>';
-
-echo $bike->brake();
-
-// Instanciation d'un nouvel objet $rockrider
-
-$rockrider = new Bicycle("Red", 1);
-
-$rockrider->setColor = 'yellow';
+// // Moving bike
 
 
-// Instanciation d'un nouvel objet $tornado
+// var_dump($bike); // then, another dump.
 
-$tornado = new Bicycle("Black", 1);
+// echo $bike->forward();
 
-$tornado->setColor = 'black';
+// echo '<br> Vitesse du vélo : ' . $bike->getCurrentSpeed() . ' km/h' . '<br>';
+
+// echo $bike->brake();
+
+// echo '<br> Vitesse du vélo : ' . $bike->getCurrentSpeed() . ' km/h' . '<br>';
+
+// echo $bike->brake();
+
+// // Instanciation d'un nouvel objet $rockrider
+
+// $rockrider = new Bicycle("Red", 1);
+
+// $rockrider->setColor = 'yellow';
 
 
-$tornado->forward();
+// // Instanciation d'un nouvel objet $tornado
+
+// $tornado = new Bicycle("Black", 1);
+
+// $tornado->setColor = 'black';
+
+
+// $tornado->forward();
 
 
 
@@ -50,26 +50,36 @@ $tornado->forward();
 $viper = new Car("Red with two white strips", 2, "Diesel");
 $viper->getCurrentSpeed();
 var_dump($viper);
-echo $viper->start() . "<br>";
+$viper->setParkBrake();
+try{
+    echo $viper->start() . "<br>";
+}
+catch(Exception $e){
+    echo "Exception Received :" . $e->getMessage();
+} finally {
+    echo "Ma voiture roule comme un donut";
+}
+
+
 echo $viper->forward() . "<br>";
 echo $viper->brake() . "<br>";
 echo $viper->stop() . "<br>";
 
-$kaamthar = new Truck (1000, "Black with flames", 2, "fuel");
-echo $kaamthar->start() . "<br>";
-echo $kaamthar->forward() . "<br>";
-echo $kaamthar->brake() . "<br>";
-echo $kaamthar->stop() . "<br>";
-echo $kaamthar->loadingStatement();
+// $kaamthar = new Truck (1000, "Black with flames", 2, "fuel");
+// echo $kaamthar->start() . "<br>";
+// echo $kaamthar->forward() . "<br>";
+// echo $kaamthar->brake() . "<br>";
+// echo $kaamthar->stop() . "<br>";
+// echo $kaamthar->loadingStatement();
 
-$autoroute = new MotorWay(4, 130);
-$parc = new PedestrianWay(1, 10);
-$ruedelapaix = new ResidentialWay(2, 50);
+// $autoroute = new MotorWay(4, 130);
+// $parc = new PedestrianWay(1, 10);
+// $ruedelapaix = new ResidentialWay(2, 50);
 
-var_dump($autoroute);
-var_dump($parc);
-var_dump($ruedelapaix);
+// var_dump($autoroute);
+// var_dump($parc);
+// var_dump($ruedelapaix);
 
-echo $autoroute->addVehicle($viper);
-var_dump($autoroute); // le véhicule est bien ajouté à la voie
+// echo $autoroute->addVehicle($viper);
+// var_dump($autoroute); // le véhicule est bien ajouté à la voie
 
